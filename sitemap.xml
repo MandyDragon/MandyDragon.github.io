@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mandydragon.github.io/categories/index.html</loc>
+    
+    <lastmod>2017-11-16T10:45:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://mandydragon.github.io/2017/11/16/Centos7%E5%AE%89%E8%A3%85php7/</loc>
     
     <lastmod>2017-11-16T10:42:21.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://mandydragon.github.io/tags/index.html</loc>
     
     <lastmod>2017-11-16T10:22:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://mandydragon.github.io/categories/index.html</loc>
-    
-    <lastmod>2017-11-16T09:39:08.000Z</lastmod>
     
   </url>
   
