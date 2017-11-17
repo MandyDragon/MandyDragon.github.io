@@ -354,7 +354,7 @@
 <li><strong>call()、</strong>callStatic()，方法重载，调用未定义过的(静态)方法时被调用,可以使用__call进行友善的<code>错误处理</code>，避免当调用不存在的方法时产生错误，意外的导致程序中止</li>
 <li>属性重载</li>
 </ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">public</span> void __set ( string $name , mixed $value )<span class="keyword">public</span> mixed __get ( string $name )<span class="keyword">public</span> bool __isset ( string $name )<span class="keyword">public</span> void __unset ( string $name )</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">public</span> void __set ( string $name , mixed $value )</span><br><span class="line"><span class="keyword">public</span> mixed __get ( string $name )</span><br><span class="line"><span class="keyword">public</span> bool __isset ( string $name )</span><br><span class="line"><span class="keyword">public</span> void __unset ( string $name )</span><br></pre></td></tr></table></figure>
 <ul>
 <li>__clone()复制时调用，复制时引用复制（浅复制），结合clone关键字实现真正的复制</li>
 <li><strong>autoload()作用: 是当你调用不存在的类时会被动调用，不建议使用，原因:</strong>autoload()重复定义时，冲突报错，只能有一个__autoload()函数</li>
