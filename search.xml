@@ -1,46 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title><![CDATA[Centos安装php7]]></title>
-      <url>/2017/11/16/Centos7%E5%AE%89%E8%A3%85php7/</url>
-      <content type="html"></content>
-      
-        <categories>
-            
-            <category> PHP </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> centos </tag>
-            
-            <tag> php7 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>/2017/11/15/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      
-        
-    </entry>
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[php魔术方法]]></title>
+    <url>%2F2017%2F11%2F17%2F%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[PHP魔术方法PHP 将所有以 开头的类法保 为魔术方法。所以在定义类方法时，除了上述魔术方法，建议不要以 为前缀 一、方法简介 __construct()，类的构造函数，在同一个类中只能声明一个构造方法 php不支持重载，如需要父类的构造函数需显式调用 __destruct()，类的析构函数，析构方法允许在销毁整个类之前执行的某些操作，无参数 call()、callStatic()，方法重载，调用未定义过的(静态)方法时被调用 可以使用__call进行友善的错误处理，避免当调用不存在的方法时产生错误，意外的导致程序中止 属性重载 public void __set ( string $name , mixed $value ) public mixed __get ( string $name ) public bool __isset ( string $name ) public void __unset ( string $name ) __clone()复制时调用，复制时引用复制（浅复制），结合clone关键字实现真正的复制 autoload()作用: 是当你调用不存在的类时会被动调用，不建议使用，原因:autoload()重复定义时，冲突报错，只能有一个__autoload()函数， 12function __autoload($class)&#123; if(file_exists($class.&quot;.php&quot;))&#123; require_once($class.&quot;.php&quot;); &#125; else &#123; die(&quot; 件 存在!&quot;); &#125; &#125; 推荐使 spl_autoload_register() 123456789function my_autoload1($class)&#123; if(file_exists(&quot;classes/&quot;.$class.&quot;.php&quot;))&#123; require_once(&quot;classes/&quot;.$class.&quot;.php&quot;); &#125; else &#123; die(&quot; 件 存在!&quot;); &#125; &#125; function my_autoload2($class)&#123; if(file_exists(&quot;core/&quot;.$class.&quot;.php&quot;))&#123; require_once(&quot;core/&quot;.$class.&quot;.php&quot;); &#125;else&#123; die(&quot; 件 存在!&quot;); &#125; &#125; //将加载函数注册到PHP中spl_autoload_register(&quot;my_autoload1&quot;);spl_autoload_register(&quot;my_autoload2&quot;); __sleep()在对一个对象序列化时(调用serialize()时)会被调用。它不接收任何参数，而且应该返回一个包含所有应该被序列化的属性的数组; __wakeup()在对存储的对象反序列化时会被调用; __toString() :在我们将对象当作字符串一样使用时会被调用; __set_state:使用var_export()函数输出对象时会调用该方法 __debugInfo(): 打印调试信息时调用 __invoke() :使用调用函数的方式调一个对象时调用该函数 123456789&lt;?phpclass Person &#123; public $sex; public $name; public $age; public function __construct($name=&quot;&quot;, $age=25, $sex=&apos;男&apos;)&#123; $this-&gt;name = $name; $this-&gt;age = $age; $this-&gt;sex = $sex; &#125; public function __invoke() &#123; echo &apos;这是 个对象&apos;; &#125; &#125; $person = new Person(&apos;jack&apos;); $person(); 二、 AOP在PHP中的实现 :&emsp;&emsp;在传统的OOP(面向对象编程:Object-Oriented Programming)思想 ，一般把应用程序分解成若干个对象，强调高内聚，弱耦合，从而提高应用程序的模块化程度，但是在处理某些问题的时候，OOP会显得不够灵活,比如说: 1234应用程序很多业务逻辑都要在操作之初进 “权限检查”，在操作之后进行“日志记录”，如果直接把处理逻辑直接加到每个模块中，那么无疑破坏了OOP的“单一职责”原则，模块的可重用就会大大降低，这时候传统的OOP设计往往采取的策略是加如相应的代理(Proxy)层来完成系统的功能要求，但这样的处理明显使系统整体增加一个层次的划分，复杂性也随之增加，从而给人过于厚重的感觉。 &emsp;&emsp;正是为了处理这样的问题，AOP(面向切面编程:Aspect-Oriented Programming)思想应运而生，假设把应用程序想成一个立体结构的话，OOP的刃是纵向切入系统，把系统划分为很多个模块(如:用户模块，文章模块等)， AOP的刀刃是横向切分系统，提取各个模块可能都要重复操作的部分(如:权限检查，日志记录等等)。由此可见，AOP是OOP的一个有效补充。 1234就目前的PHP来说，还没有一个完整的AOP内置实现，虽然出现 RunKit，但估计很长时间内不太可能成为PHP的缺省设置。那是么是AOP在PHP可以实现吗?当然，因为我们有get()，set()，__call()等魔术方法，结合起来使用这些方法可以为我们实现某种程度的“准AOP”，之所以说是准AOP，是因为单单从实现上来看，称其为AOP有些牵强，但是从效果上来看，又部分实现 AOP的作用，虽然其实现方式并不完美，但对于一般的使用已经够了。 三、魔术变量 LINE: 文件中的当前行号。 FILE: 文件的完整路径和文件名。当在被包含文件中，则返回被包含的文件名 DIR: 文件所在的目录。如果用在被包括文件中，则返回被包括的文件所在的目录。 FUNCTION: 常量，返回该函数被定义时的名字 CLASS: 常量，返回该类被定义时的名字(区分大小写)。 METHOD:返回该方法被定义时的名字(区分大小写)。7.NAMESPACE:当前命名空间的名称(区分大小写) 四、超全局变量 $GLOBALS:储存全局作用域中的变量。 $_SERVER:获取服务器相关信息。 $_REQUEST:获取POST和GET请求的参数 $_POST:获取表单的POST请求参数 $_GET:获取表单的GET请求参数 $_FILES:获取上传文件的的变量 $_ENV:获取服务器端环境变量的数组 $_COOKIE:浏览器cookie的操作 $_SESSION:服务端session的操作 五、结语&emsp;&emsp;PHP中的”重载”与其它绝大多数面向对象语言不同。传统的”重载”是提供多个同名的类方法，但各方法的参数类型和个数不同。 PHP所提供的”重载”(overloading)是指动态地”创建”类属性和方法。 当调用当前环境下未定义或 不可见的类属性或方法时，重载方法会被调用]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Centos安装php7]]></title>
+    <url>%2F2017%2F11%2F16%2FCentos7%E5%AE%89%E8%A3%85php7%2F</url>
+    <content type="text"><![CDATA[#php7 yum安装 ##哈哈哈哈加载 1hello word]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>php7</tag>
+      </tags>
+  </entry>
 </search>
