@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[HTTP常见状态码]]></title>
+    <url>%2F2017%2F11%2F20%2FHTTP%E5%B8%B8%E8%A7%81%E7%8A%B6%E6%80%81%E7%A0%81%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[HTTP状态码出现499错误]]></title>
     <url>%2F2017%2F11%2F20%2FHTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%87%BA%E7%8E%B0499%E9%94%99%E8%AF%AF%2F</url>
     <content type="text"></content>
@@ -8,7 +13,7 @@
   <entry>
     <title><![CDATA[使用七牛云做hexo图床]]></title>
     <url>%2F2017%2F11%2F20%2F%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%81%9Ahexo%E5%9B%BE%E5%BA%8A%2F</url>
-    <content type="text"><![CDATA[原blog链家：使用七牛云存储做图床，为hexo存储引用图片]]></content>
+    <content type="text"><![CDATA[使用七牛云存储做图床，为hexo存储引用图片]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
@@ -19,12 +24,12 @@
   <entry>
     <title><![CDATA[web常见问题排查]]></title>
     <url>%2F2017%2F11%2F20%2F%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[一、一般排查方法 检查error_log 检查access_log strace查看系统调用 tcpdump分析网络状况 程序的gdb调试 error_logerror_log提供了有关异常的丰富信: 网络超时：connect,write,read timeout File not found Http状态码 HTTP状态码 400 错误 - 请求无效 (Bad request) 499 错误 比如：等网络超时错误，比如Permission denied, File not found等系统调用错误，比如400，499，500等对应的HTTP状态码错误]]></content>
+    <content type="text"><![CDATA[一、一般排查方法 检查error_log 检查access_log strace查看系统调用 tcpdump分析网络状况 程序的gdb调试 error_logerror_log提供了有关异常的丰富信: 网络超时：connect,write,read timeout File not found Http状态码 HTTP常见状态码 400错误 - 请求无效 (Bad request) 499错误 比如：等网络超时错误，比如Permission denied, File not found等系统调用错误，比如400，499，500等对应的HTTP状态码错误]]></content>
       <categories>
         <category>问题解决</category>
       </categories>
       <tags>
-        <tag>PHP,Nginx</tag>
+        <tag>PHP, Nginx</tag>
       </tags>
   </entry>
   <entry>
