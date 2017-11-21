@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="一、一般排查方法 检查error_log 检查access_log strace查看系统调用 tcpdump分析网络状况 程序的gdb调试  error_logerror_log提供了有关异常的丰富信:  网络超时：connect,write,read timeout File not found HTTP常见状态码 ">
+<meta name="description" content="一、一般排查方法 检查error_log 检查access_log strace查看系统调用 tcpdump分析网络状况 程序的gdb调试  error_logerror_log提供了有关异常的丰富信:  网络超时：connect,write,read timeout File not found HTTP状态码  &">
 <meta name="keywords" content="PHP, Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web常见问题排查">
 <meta property="og:url" content="https://mandydragon.github.io/2017/11/20/开发常见问题排查方法/index.html">
 <meta property="og:site_name" content="庸人妄语">
-<meta property="og:description" content="一、一般排查方法 检查error_log 检查access_log strace查看系统调用 tcpdump分析网络状况 程序的gdb调试  error_logerror_log提供了有关异常的丰富信:  网络超时：connect,write,read timeout File not found HTTP常见状态码  比如：等网络超时错误，比如Permission denied, File no">
+<meta property="og:description" content="一、一般排查方法 检查error_log 检查access_log strace查看系统调用 tcpdump分析网络状况 程序的gdb调试  error_logerror_log提供了有关异常的丰富信:  网络超时：connect,write,read timeout File not found HTTP状态码  &amp;nbsp;&amp;nbsp;&amp;nbsp; 举例来讲，更新nginx后，http请求不能">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-20T10:54:14.000Z">
+<meta property="og:updated_time" content="2017-11-20T12:11:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web常见问题排查">
-<meta name="twitter:description" content="一、一般排查方法 检查error_log 检查access_log strace查看系统调用 tcpdump分析网络状况 程序的gdb调试  error_logerror_log提供了有关异常的丰富信:  网络超时：connect,write,read timeout File not found HTTP常见状态码  比如：等网络超时错误，比如Permission denied, File no">
+<meta name="twitter:description" content="一、一般排查方法 检查error_log 检查access_log strace查看系统调用 tcpdump分析网络状况 程序的gdb调试  error_logerror_log提供了有关异常的丰富信:  网络超时：connect,write,read timeout File not found HTTP状态码  &amp;nbsp;&amp;nbsp;&amp;nbsp; 举例来讲，更新nginx后，http请求不能">
 
 
 
@@ -355,9 +355,9 @@
 <ul>
 <li>网络超时：connect,write,read timeout</li>
 <li>File not found</li>
-<li><a href="https://mandydragon.github.io/2017/11/20/HTTP%E5%B8%B8%E8%A7%81%E7%8A%B6%E6%80%81%E7%A0%81/">HTTP常见状态码</a></li>
+<li><a href="https://mandydragon.github.io/2017/11/20/HTTP%E5%B8%B8%E8%A7%81%E7%8A%B6%E6%80%81%E7%A0%81/">HTTP状态码</a></li>
 </ul>
-<p>比如：等网络超时错误，比如Permission denied, File not found等系统调用错误，比如400，499，500等对应的HTTP状态码错误</p>
+<p>&nbsp;&nbsp;&nbsp; 举例来讲，更新nginx后，http请求不能返回完整数据，返回部分数据后请求就结束了，每次都能复现。这时候查看error_log,看到有Permission denied错误，即查实为nginx的临时写目录没有权限所造成。</p>
 
       
     </div>
@@ -493,7 +493,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -504,7 +504,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -515,7 +515,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
