@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="PHP, Mysql, Go, Redis, Mongodb" />
+  <meta name="keywords" content="Nginx," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="AV.initialize(&quot;&quot;, &quot;&quot;); //需要写上leancloud的key    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Co">
-<meta name="keywords" content="PHP,Python,Redis,Mongodb,MYSQL,Go,Linux">
-<meta property="og:type" content="website">
-<meta property="og:title" content="“”">
-<meta property="og:url" content="https://mandydragon.github.io/“”/index.html">
+<meta name="description" content="500（服务器内部错误）    服务器遇到错误，无法完成请求。501（尚未实施）    服务器不具备完成请求的功能。例如，当服务器无法识别请求方法时，服务器可能会返回此代码。502（错误网关）    服务器作为网关或代理，从上游服务器收到了无效的响应。503（服务不可用）    目前无法使用服务器（由于超载或进行停机维">
+<meta name="keywords" content="Nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx 500错误总结">
+<meta property="og:url" content="https://mandydragon.github.io/2017/11/27/问题排查/Nginx 500错误总结/index.html">
 <meta property="og:site_name" content="庸人妄语">
-<meta property="og:description" content="AV.initialize(&quot;&quot;, &quot;&quot;); //需要写上leancloud的key    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);//表名   query.notEqualTo(&apos;id&apos;,0); //id不为0的结果   query.descending(&apos;time&apos;); //结果">
+<meta property="og:description" content="500（服务器内部错误）    服务器遇到错误，无法完成请求。501（尚未实施）    服务器不具备完成请求的功能。例如，当服务器无法识别请求方法时，服务器可能会返回此代码。502（错误网关）    服务器作为网关或代理，从上游服务器收到了无效的响应。503（服务不可用）    目前无法使用服务器（由于超载或进行停机维护）。通常，这只是一种暂时的状态。504（网关超时）    服务器作为网关或代理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-16T08:08:40.000Z">
+<meta property="og:updated_time" content="2017-11-27T07:01:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="“”">
-<meta name="twitter:description" content="AV.initialize(&quot;&quot;, &quot;&quot;); //需要写上leancloud的key    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);//表名   query.notEqualTo(&apos;id&apos;,0); //id不为0的结果   query.descending(&apos;time&apos;); //结果">
+<meta name="twitter:title" content="Nginx 500错误总结">
+<meta name="twitter:description" content="500（服务器内部错误）    服务器遇到错误，无法完成请求。501（尚未实施）    服务器不具备完成请求的功能。例如，当服务器无法识别请求方法时，服务器可能会返回此代码。502（错误网关）    服务器作为网关或代理，从上游服务器收到了无效的响应。503（服务不可用）    目前无法使用服务器（由于超载或进行停机维护）。通常，这只是一种暂时的状态。504（网关超时）    服务器作为网关或代理">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://mandydragon.github.io/“”/"/>
+  <link rel="canonical" href="https://mandydragon.github.io/2017/11/27/问题排查/Nginx 500错误总结/"/>
 
 
 
 
 
-  <title>“” | 庸人妄语</title>
+  <title>Nginx 500错误总结 | 庸人妄语</title>
   
 
 
@@ -243,56 +243,191 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mandydragon.github.io/2017/11/27/问题排查/Nginx 500错误总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MandyDragon">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/docker.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="庸人妄语">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">“”</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-<script>AV.initialize("", "");</script> //需要写上leancloud的key
-<script type="text/javascript">
-  var time=0
-  var title=""
-  var url=""
-  var query = new AV.Query('Counter');//表名
-  query.notEqualTo('id',0); //id不为0的结果
-  query.descending('time'); //结果按阅读次数降序排序
-  query.limit(20);  //最终只返回10条结果
-  query.find().then(function (todo) {
-    for (var i=0;i<10;i++){ 
-      var result=todo[i].attributes;
-      time=result.time;  //阅读次数
-      title=result.title; //文章标题
-      url=result.url;     //文章url
-      var content="<p>"+"<font color='#0477ab'>"+"【阅读次数:"+time+"】"+"<a href='"+"http://thief.one"+url+"'>"+title+"</font>"+"</a>"+"</p>";
-      // document.write("<a href='"+"http://thief.one/"+url+"'>"+title+"</a>"+"    Readtimes:"+time+"<br>");
-      document.getElementById("heheda").innerHTML+=content
-    }
-  }, function (error) {
-    console.log("error");
-  });
-</script>
+          <h2 class="post-title" itemprop="name headline">Nginx 500错误总结</h2>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T15:00:01+08:00">
+                2017-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>500（服务器内部错误）    服务器遇到错误，无法完成请求。<br>501（尚未实施）    服务器不具备完成请求的功能。例如，当服务器无法识别请求方法时，服务器可能会返回此代码。<br>502（错误网关）    服务器作为网关或代理，从上游服务器收到了无效的响应。<br>503（服务不可用）    目前无法使用服务器（由于超载或进行停机维护）。通常，这只是一种暂时的状态。<br>504（网关超时）    服务器作为网关或代理，未及时从上游服务器接收请求。<br>505（HTTP 版本不受支持）    服务器不支持请求中所使用的 HTTP 协议版本。</p>
+<p>Nginx 500错误（Internal Server Error  内部服务器错误）：500错误指的是服务器内部错误，也就是服务器遇到意外情况，而无法履行请求。</p>
+<p>500错误一般有几种情况：</p>
+<ol>
+<li><p>web脚本错误，如php语法错误，lua语法错误等。</p>
+</li>
+<li><p>访问量大的时候，由于系统资源限制，而不能打开过多的文件</p>
+</li>
+</ol>
+<p>一般分析思路：</p>
+<p>（1）查看nginx error log ，查看php error log</p>
+<p>（2）如果是too many open files，修改nginx的worker_rlimit_nofile参数，使用ulimit查看系统打开文件限制，修改/etc/security/limits.conf</p>
+<p>（3）如果是脚本的问题，则需要修复脚本错误，并优化代码</p>
+<p>（4）各种优化都做好，还是出现too many open files，那就要考虑做负载均衡，把流量分散到不同服务器上去了。</p>
+<p>错误原因总结：</p>
+<p>1、硬盘空间满了 </p>
+<p>使用 df -k 查看硬盘空间是否满了。清理硬盘空间就可以解决500错误。nginx如果开启了access log，在不需要的情况下，最好关闭access log。access log会占用大量硬盘空间。 </p>
+<p>2、nginx配置文件错误 </p>
+<p>这里不是指语法错误，nginx如果配置文件有语法错误，启动的时候就会提示。当配置rewrite的时候，有些规则处理不当会出现500错误，请仔细检查自己的rewrite规则。如果配置文件里有些变量设置不当，也会出现500错误，比如引用了一个没有值的变量。 </p>
+<p>3、如果上面的问题都不存在可能是模拟的并发数太多了，需要调整一下nginx.conf的并发设置数 </p>
+<p>解决方法是： </p>
+<p>1 打开/etc/security/limits.conf文件，加上两句</p>
+<p>复制代码代码如下:</p>
+<ul>
+<li>soft nofile 65535 </li>
+<li>hard nofile 65535 </li>
+</ul>
+<p>2 打开/etc/nginx/nginx.conf<br>在worker_processes的下面增加一行 </p>
+<p>复制代码代码如下:<br>worker_rlimit_nofile 65535;</p>
+<p>3 重新启动nginx，重新载入设置 </p>
+<p>复制代码代码如下:<br>kill -9 <code>ps -ef | grep php | grep -v grep | awk &#39;{print $2}&#39;</code><br>/usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -C 100 -u www-data -f /usr/bin/php-cgi<br>killall -HUP nginx<br>重启后再看nginx的错误日志，也没有发现500报错的情况了。 </p>
+<p>4、有可能是数据库问题我的在nginx日志php日志都没有发现什么问题, 最后发现数据库访问不了,修正后问题解决。</p>
+<hr>
+<p>参考：</p>
+<ol>
+<li><a href="http://www.cnblogs.com/huqiang/p/5333975.html" target="_blank" rel="noopener">http://www.cnblogs.com/huqiang/p/5333975.html</a></li>
+<li></li>
+</ol>
+
       
     </div>
     
     
     
+
+    <div>
+      
+        
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/27/PHP慢日志slow-log/" rel="next" title="PHP慢日志slow_log">
+                <i class="fa fa-chevron-left"></i> PHP慢日志slow_log
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/27/Nginx 504错误总结/" rel="prev" title="Nginx 504错误总结">
+                Nginx 504错误总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 

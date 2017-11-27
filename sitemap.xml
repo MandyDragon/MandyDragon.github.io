@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://mandydragon.github.io/2017/11/27/PHP%E6%85%A2%E6%97%A5%E5%BF%97slow-log/</loc>
+    <loc>https://mandydragon.github.io/2017/11/27/Nginx%20504%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/</loc>
     
-    <lastmod>2017-11-27T06:57:19.000Z</lastmod>
+    <lastmod>2017-11-27T07:03:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mandydragon.github.io/2017/11/27/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/Nginx%20500%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/</loc>
+    
+    <lastmod>2017-11-27T07:01:25.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://mandydragon.github.io/2017/11/20/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/</loc>
     
-    <lastmod>2017-11-27T03:42:23.000Z</lastmod>
+    <lastmod>2017-11-27T07:01:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mandydragon.github.io/2017/11/27/PHP%E6%85%A2%E6%97%A5%E5%BF%97slow-log/</loc>
+    
+    <lastmod>2017-11-27T06:57:19.000Z</lastmod>
     
   </url>
   
