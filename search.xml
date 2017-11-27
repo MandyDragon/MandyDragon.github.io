@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[nginx 403 Forbidden]]></title>
+    <url>%2F2017%2F11%2F27%2F%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%2Fnginx-403-Forbidden%2F</url>
+    <content type="text"><![CDATA[nginx 403 Forbidden]]></content>
+      <categories>
+        <category>问题排查</category>
+      </categories>
+      <tags>
+        <tag>Nginx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[lnmp访问速度变慢排查方法]]></title>
     <url>%2F2017%2F11%2F27%2F%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%2Flnmp%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E5%8F%98%E6%85%A2%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[lnmp访问速度变慢排查方法]]></content>
