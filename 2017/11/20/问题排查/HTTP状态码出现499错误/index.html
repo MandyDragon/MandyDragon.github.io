@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="校招," />
+  <meta name="keywords" content="PHP, Mysql, Go, Redis, Mongodb" />
 
 
 
@@ -81,18 +81,15 @@
 
 
 
-<meta name="description" content="工欲善其事必先利其器    阿里、腾讯     阿里面试题总结   百度、京东、蘑菇街、腾讯   阿里、华为、滴滴、百度、携程、爱奇艺、美团   百度、京东、滴滴、新浪   百度、腾讯、网易、360、去哪网   百度、头条、滴滴、阿里、搜狐   腾讯、滴滴、阿里、网易、小米、京东、美团、百度   美团、蚂蚁金服、阿">
-<meta name="keywords" content="校招">
+<meta name="keywords" content="PHP,Python,Redis,Mongodb,MYSQL,Go,Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018研发校招面经">
-<meta property="og:url" content="https://mandydragon.github.io/2017/11/22/2018研发校招面经/index.html">
+<meta property="og:title" content="HTTP状态码出现499错误">
+<meta property="og:url" content="https://mandydragon.github.io/2017/11/20/问题排查/HTTP状态码出现499错误/index.html">
 <meta property="og:site_name" content="庸人妄语">
-<meta property="og:description" content="工欲善其事必先利其器    阿里、腾讯     阿里面试题总结   百度、京东、蘑菇街、腾讯   阿里、华为、滴滴、百度、携程、爱奇艺、美团   百度、京东、滴滴、新浪   百度、腾讯、网易、360、去哪网   百度、头条、滴滴、阿里、搜狐   腾讯、滴滴、阿里、网易、小米、京东、美团、百度   美团、蚂蚁金服、阿里   蚂蚁金服、携程、美团、58   美团、腾讯、百度   阿里、美团、同花顺">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-22T04:18:06.000Z">
+<meta property="og:updated_time" content="2017-11-20T10:46:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018研发校招面经">
-<meta name="twitter:description" content="工欲善其事必先利其器    阿里、腾讯     阿里面试题总结   百度、京东、蘑菇街、腾讯   阿里、华为、滴滴、百度、携程、爱奇艺、美团   百度、京东、滴滴、新浪   百度、腾讯、网易、360、去哪网   百度、头条、滴滴、阿里、搜狐   腾讯、滴滴、阿里、网易、小米、京东、美团、百度   美团、蚂蚁金服、阿里   蚂蚁金服、携程、美团、58   美团、腾讯、百度   阿里、美团、同花顺">
+<meta name="twitter:title" content="HTTP状态码出现499错误">
 
 
 
@@ -122,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://mandydragon.github.io/2017/11/22/2018研发校招面经/"/>
+  <link rel="canonical" href="https://mandydragon.github.io/2017/11/20/问题排查/HTTP状态码出现499错误/"/>
 
 
 
 
 
-  <title>2018研发校招面经 | 庸人妄语</title>
+  <title>HTTP状态码出现499错误 | 庸人妄语</title>
   
 
 
@@ -255,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mandydragon.github.io/2017/11/22/2018研发校招面经/">
+    <link itemprop="mainEntityOfPage" href="https://mandydragon.github.io/2017/11/20/问题排查/HTTP状态码出现499错误/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MandyDragon">
@@ -272,7 +269,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">2018研发校招面经</h2>
+          <h2 class="post-title" itemprop="name headline">HTTP状态码出现499错误</h2>
         
 
         <div class="post-meta">
@@ -284,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-22T11:01:53+08:00">
-                2017-11-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T18:46:38+08:00">
+                2017-11-20
               </time>
             
 
@@ -294,28 +291,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试/" itemprop="url" rel="index">
-                    <span itemprop="name">面试</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -344,119 +319,7 @@
       
 
       
-        <p>工欲善其事必先利其器</p>
-<table>
-<thead>
-<tr>
-<th><a href="https://www.nowcoder.com/discuss/41696?type=0&amp;order=4&amp;pos=6&amp;page=2" target="_blank" rel="noopener">阿里、腾讯</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/5949?type=0&amp;order=4&amp;pos=129&amp;page=9" target="_blank" rel="noopener">阿里面试题总结</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/54297?type=0&amp;order=4&amp;pos=30&amp;page=3" target="_blank" rel="noopener">百度、京东、蘑菇街、腾讯</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/59683?type=0&amp;order=4&amp;pos=28&amp;page=1" target="_blank" rel="noopener">阿里、华为、滴滴、百度、携程、爱奇艺、美团</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/27285?type=0&amp;order=4&amp;pos=16&amp;page=1" target="_blank" rel="noopener">百度、京东、滴滴、新浪</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/14852?type=0&amp;order=4&amp;pos=15&amp;page=1" target="_blank" rel="noopener">百度、腾讯、网易、360、去哪网</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/41650?type=0&amp;order=4&amp;pos=14&amp;page=1" target="_blank" rel="noopener">百度、头条、滴滴、阿里、搜狐</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/62849?type=0&amp;order=4&amp;pos=17&amp;page=1" target="_blank" rel="noopener">腾讯、滴滴、阿里、网易、小米、京东、美团、百度</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/50455?type=0&amp;order=4&amp;pos=70&amp;page=2" target="_blank" rel="noopener">美团、蚂蚁金服、阿里</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/57771?type=0&amp;order=4&amp;pos=73&amp;page=2" target="_blank" rel="noopener">蚂蚁金服、携程、美团、58</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/57075?type=0&amp;order=4&amp;pos=82&amp;page=2" target="_blank" rel="noopener">美团、腾讯、百度</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/59132?type=0&amp;order=4&amp;pos=29&amp;page=2" target="_blank" rel="noopener">阿里、美团、同花顺</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/50439?type=0&amp;order=4&amp;pos=58&amp;page=1" target="_blank" rel="noopener">阿里、小米、搜狗、美团、百度、腾讯、便利蜂</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/37873?type=0&amp;order=4&amp;pos=91&amp;page=1" target="_blank" rel="noopener">蚂蚁金服、链家</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/37180?type=0&amp;order=4&amp;pos=23&amp;page=1" target="_blank" rel="noopener">阿里</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/26045?type=0&amp;order=4&amp;pos=59&amp;page=2" target="_blank" rel="noopener">腾讯</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/59401?type=0&amp;order=4&amp;pos=95&amp;page=1" target="_blank" rel="noopener">小米</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/61879?type=0&amp;order=4&amp;pos=51&amp;page=1" target="_blank" rel="noopener">华为</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/52168?type=0&amp;order=4&amp;pos=37&amp;page=2" target="_blank" rel="noopener">头条、网易、美团、google、京东</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/60743?type=0&amp;order=4&amp;pos=33&amp;page=2" target="_blank" rel="noopener">腾讯、阿里</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/60078?type=0&amp;order=4&amp;pos=31&amp;page=1" target="_blank" rel="noopener">百度、阿里</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/52268?type=0&amp;order=4&amp;pos=32&amp;page=2" target="_blank" rel="noopener">蚂蚁金服、京东</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/33737?type=0&amp;order=4&amp;pos=18&amp;page=2" target="_blank" rel="noopener">知识点总结</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/60509?type=0&amp;order=4&amp;pos=12&amp;page=3" target="_blank" rel="noopener">知识点总结</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/61958?type=0&amp;order=4&amp;pos=11&amp;page=6" target="_blank" rel="noopener">知识点总结</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/59865?type=0&amp;order=4&amp;pos=13&amp;page=1" target="_blank" rel="noopener">书籍</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/60441?type=0&amp;order=4&amp;pos=36&amp;page=2" target="_blank" rel="noopener">面试书籍</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/21253?type=0&amp;order=4&amp;pos=22&amp;page=1" target="_blank" rel="noopener">高级算法</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/52516?type=0&amp;order=4&amp;pos=25&amp;page=6" target="_blank" rel="noopener">校招心路总结</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/18518?type=0&amp;order=4&amp;pos=85&amp;page=2" target="_blank" rel="noopener">校招历程</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/56158?type=0&amp;order=4&amp;pos=54&amp;page=3" target="_blank" rel="noopener">校招历程</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/51298?type=0&amp;order=4&amp;pos=40&amp;page=2" target="_blank" rel="noopener">校招历程</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/52557?type=0&amp;order=4&amp;pos=26&amp;page=4" target="_blank" rel="noopener">大数据面经，阿里，百度，头条，滴滴，美团，京东，携程</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/48218?type=0&amp;order=4&amp;pos=7&amp;page=1" target="_blank" rel="noopener">链家、58、美团、滴滴、头条、百度、腾讯</a></td>
-</tr>
-<tr>
-<td><a href="https://www.nowcoder.com/discuss/60441?type=0&amp;order=4&amp;pos=36&amp;page=2" target="_blank" rel="noopener">知识点</a></td>
-</tr>
-</tbody>
-</table>
-
+        
       
     </div>
     
@@ -477,12 +340,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/校招/" rel="tag"># 校招</a>
-          
-        </div>
-      
 
       
       
@@ -492,8 +349,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/21/重启远程linux主机/" rel="next" title="重启远程linux主机">
-                <i class="fa fa-chevron-left"></i> 重启远程linux主机
+              <a href="/2017/11/20/杂谈/使用七牛云做hexo图床/" rel="next" title="使用七牛云做hexo图床">
+                <i class="fa fa-chevron-left"></i> 使用七牛云做hexo图床
               </a>
             
           </div>
@@ -502,8 +359,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/27/PHP慢日志slow-log/" rel="prev" title="PHP慢日志slow_log">
-                PHP慢日志slow_log <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/20/http/HTTP常见状态码/" rel="prev" title="HTTP常见状态码">
+                HTTP常见状态码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

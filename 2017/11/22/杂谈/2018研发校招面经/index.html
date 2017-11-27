@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Nginx," />
+  <meta name="keywords" content="校招," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="很多人都都可能遇到过 504 Gateway Time-out。有时候会让人一头雾水。解决方法：1.通过百度可以很多人的说法，调整 nginx配置或者PHP-fpm配置，配置大家都可以百度，在这边就不多说。但是很多都尝试了没有什么软用。2.尝试过上面的方法还是回到本质上是不是整站都是504.如果不是，我建议你打开php">
-<meta name="keywords" content="Nginx">
+<meta name="description" content="工欲善其事必先利其器    阿里、腾讯     阿里面试题总结   百度、京东、蘑菇街、腾讯   阿里、华为、滴滴、百度、携程、爱奇艺、美团   百度、京东、滴滴、新浪   百度、腾讯、网易、360、去哪网   百度、头条、滴滴、阿里、搜狐   腾讯、滴滴、阿里、网易、小米、京东、美团、百度   美团、蚂蚁金服、阿">
+<meta name="keywords" content="校招">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx 504错误总结">
-<meta property="og:url" content="https://mandydragon.github.io/2017/11/27/Nginx 504错误总结/index.html">
+<meta property="og:title" content="2018研发校招面经">
+<meta property="og:url" content="https://mandydragon.github.io/2017/11/22/杂谈/2018研发校招面经/index.html">
 <meta property="og:site_name" content="庸人妄语">
-<meta property="og:description" content="很多人都都可能遇到过 504 Gateway Time-out。有时候会让人一头雾水。解决方法：1.通过百度可以很多人的说法，调整 nginx配置或者PHP-fpm配置，配置大家都可以百度，在这边就不多说。但是很多都尝试了没有什么软用。2.尝试过上面的方法还是回到本质上是不是整站都是504.如果不是，我建议你打开php-fpm 慢日志来查看对应的页面请求与响应慢是由哪个方法或者操作造成的。php-">
+<meta property="og:description" content="工欲善其事必先利其器    阿里、腾讯     阿里面试题总结   百度、京东、蘑菇街、腾讯   阿里、华为、滴滴、百度、携程、爱奇艺、美团   百度、京东、滴滴、新浪   百度、腾讯、网易、360、去哪网   百度、头条、滴滴、阿里、搜狐   腾讯、滴滴、阿里、网易、小米、京东、美团、百度   美团、蚂蚁金服、阿里   蚂蚁金服、携程、美团、58   美团、腾讯、百度   阿里、美团、同花顺">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-27T07:03:25.000Z">
+<meta property="og:updated_time" content="2017-11-22T04:18:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx 504错误总结">
-<meta name="twitter:description" content="很多人都都可能遇到过 504 Gateway Time-out。有时候会让人一头雾水。解决方法：1.通过百度可以很多人的说法，调整 nginx配置或者PHP-fpm配置，配置大家都可以百度，在这边就不多说。但是很多都尝试了没有什么软用。2.尝试过上面的方法还是回到本质上是不是整站都是504.如果不是，我建议你打开php-fpm 慢日志来查看对应的页面请求与响应慢是由哪个方法或者操作造成的。php-">
+<meta name="twitter:title" content="2018研发校招面经">
+<meta name="twitter:description" content="工欲善其事必先利其器    阿里、腾讯     阿里面试题总结   百度、京东、蘑菇街、腾讯   阿里、华为、滴滴、百度、携程、爱奇艺、美团   百度、京东、滴滴、新浪   百度、腾讯、网易、360、去哪网   百度、头条、滴滴、阿里、搜狐   腾讯、滴滴、阿里、网易、小米、京东、美团、百度   美团、蚂蚁金服、阿里   蚂蚁金服、携程、美团、58   美团、腾讯、百度   阿里、美团、同花顺">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://mandydragon.github.io/2017/11/27/Nginx 504错误总结/"/>
+  <link rel="canonical" href="https://mandydragon.github.io/2017/11/22/杂谈/2018研发校招面经/"/>
 
 
 
 
 
-  <title>Nginx 504错误总结 | 庸人妄语</title>
+  <title>2018研发校招面经 | 庸人妄语</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mandydragon.github.io/2017/11/27/Nginx 504错误总结/">
+    <link itemprop="mainEntityOfPage" href="https://mandydragon.github.io/2017/11/22/杂谈/2018研发校招面经/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MandyDragon">
@@ -272,7 +272,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Nginx 504错误总结</h2>
+          <h2 class="post-title" itemprop="name headline">2018研发校招面经</h2>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T15:02:28+08:00">
-                2017-11-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-22T11:01:53+08:00">
+                2017-11-22
               </time>
             
 
@@ -294,6 +294,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -322,12 +344,118 @@
       
 
       
-        <p>很多人都都可能遇到过 504 Gateway Time-out。有时候会让人一头雾水。<br>解决方法：<br>1.通过百度可以很多人的说法，调整 nginx配置或者PHP-fpm配置，配置大家都可以百度，在这边就不多说。但是很多都尝试了没有什么软用。<br>2.尝试过上面的方法还是回到本质上是不是整站都是504.如果不是，我建议你打开php-fpm 慢日志来查看对应的页面请求与响应慢是由哪个方法或者操作造成的。<br>php-fpm 慢日志的配置如下：<br>request_slowlog_timeout = 5 //5秒以上的 当一个请求该设置的超时时间后，就会将对应的PHP调用堆栈信息完整写入到慢日志中 设置为 ‘0’ 表示 ‘Off’<br>slowlog = /var/log/php-fpm.slow.log   //日志目录</p>
-<p>再打开日志方法查看是哪个方法或者操作导致的。直接修改代码。<br>php-fpm 慢日志 不建议在生产环境下使用</p>
-<hr>
-<ol>
-<li><a href="https://my.oschina.net/u/3503791/blog/908623" target="_blank" rel="noopener">https://my.oschina.net/u/3503791/blog/908623</a></li>
-</ol>
+        <p>工欲善其事必先利其器</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://www.nowcoder.com/discuss/41696?type=0&amp;order=4&amp;pos=6&amp;page=2" target="_blank" rel="noopener">阿里、腾讯</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/5949?type=0&amp;order=4&amp;pos=129&amp;page=9" target="_blank" rel="noopener">阿里面试题总结</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/54297?type=0&amp;order=4&amp;pos=30&amp;page=3" target="_blank" rel="noopener">百度、京东、蘑菇街、腾讯</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/59683?type=0&amp;order=4&amp;pos=28&amp;page=1" target="_blank" rel="noopener">阿里、华为、滴滴、百度、携程、爱奇艺、美团</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/27285?type=0&amp;order=4&amp;pos=16&amp;page=1" target="_blank" rel="noopener">百度、京东、滴滴、新浪</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/14852?type=0&amp;order=4&amp;pos=15&amp;page=1" target="_blank" rel="noopener">百度、腾讯、网易、360、去哪网</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/41650?type=0&amp;order=4&amp;pos=14&amp;page=1" target="_blank" rel="noopener">百度、头条、滴滴、阿里、搜狐</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/62849?type=0&amp;order=4&amp;pos=17&amp;page=1" target="_blank" rel="noopener">腾讯、滴滴、阿里、网易、小米、京东、美团、百度</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/50455?type=0&amp;order=4&amp;pos=70&amp;page=2" target="_blank" rel="noopener">美团、蚂蚁金服、阿里</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/57771?type=0&amp;order=4&amp;pos=73&amp;page=2" target="_blank" rel="noopener">蚂蚁金服、携程、美团、58</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/57075?type=0&amp;order=4&amp;pos=82&amp;page=2" target="_blank" rel="noopener">美团、腾讯、百度</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/59132?type=0&amp;order=4&amp;pos=29&amp;page=2" target="_blank" rel="noopener">阿里、美团、同花顺</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/50439?type=0&amp;order=4&amp;pos=58&amp;page=1" target="_blank" rel="noopener">阿里、小米、搜狗、美团、百度、腾讯、便利蜂</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/37873?type=0&amp;order=4&amp;pos=91&amp;page=1" target="_blank" rel="noopener">蚂蚁金服、链家</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/37180?type=0&amp;order=4&amp;pos=23&amp;page=1" target="_blank" rel="noopener">阿里</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/26045?type=0&amp;order=4&amp;pos=59&amp;page=2" target="_blank" rel="noopener">腾讯</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/59401?type=0&amp;order=4&amp;pos=95&amp;page=1" target="_blank" rel="noopener">小米</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/61879?type=0&amp;order=4&amp;pos=51&amp;page=1" target="_blank" rel="noopener">华为</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/52168?type=0&amp;order=4&amp;pos=37&amp;page=2" target="_blank" rel="noopener">头条、网易、美团、google、京东</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/60743?type=0&amp;order=4&amp;pos=33&amp;page=2" target="_blank" rel="noopener">腾讯、阿里</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/60078?type=0&amp;order=4&amp;pos=31&amp;page=1" target="_blank" rel="noopener">百度、阿里</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/52268?type=0&amp;order=4&amp;pos=32&amp;page=2" target="_blank" rel="noopener">蚂蚁金服、京东</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/33737?type=0&amp;order=4&amp;pos=18&amp;page=2" target="_blank" rel="noopener">知识点总结</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/60509?type=0&amp;order=4&amp;pos=12&amp;page=3" target="_blank" rel="noopener">知识点总结</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/61958?type=0&amp;order=4&amp;pos=11&amp;page=6" target="_blank" rel="noopener">知识点总结</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/59865?type=0&amp;order=4&amp;pos=13&amp;page=1" target="_blank" rel="noopener">书籍</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/60441?type=0&amp;order=4&amp;pos=36&amp;page=2" target="_blank" rel="noopener">面试书籍</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/21253?type=0&amp;order=4&amp;pos=22&amp;page=1" target="_blank" rel="noopener">高级算法</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/52516?type=0&amp;order=4&amp;pos=25&amp;page=6" target="_blank" rel="noopener">校招心路总结</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/18518?type=0&amp;order=4&amp;pos=85&amp;page=2" target="_blank" rel="noopener">校招历程</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/56158?type=0&amp;order=4&amp;pos=54&amp;page=3" target="_blank" rel="noopener">校招历程</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/51298?type=0&amp;order=4&amp;pos=40&amp;page=2" target="_blank" rel="noopener">校招历程</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/52557?type=0&amp;order=4&amp;pos=26&amp;page=4" target="_blank" rel="noopener">大数据面经，阿里，百度，头条，滴滴，美团，京东，携程</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/48218?type=0&amp;order=4&amp;pos=7&amp;page=1" target="_blank" rel="noopener">链家、58、美团、滴滴、头条、百度、腾讯</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nowcoder.com/discuss/60441?type=0&amp;order=4&amp;pos=36&amp;page=2" target="_blank" rel="noopener">知识点</a></td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -351,7 +479,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
+            <a href="/tags/校招/" rel="tag"># 校招</a>
           
         </div>
       
@@ -364,8 +492,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/27/问题排查/Nginx 500错误总结/" rel="next" title="Nginx 500错误总结">
-                <i class="fa fa-chevron-left"></i> Nginx 500错误总结
+              <a href="/2017/11/21/linux/重启远程linux主机/" rel="next" title="重启远程linux主机">
+                <i class="fa fa-chevron-left"></i> 重启远程linux主机
               </a>
             
           </div>
@@ -373,6 +501,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/27/问题排查/PHP慢日志slow-log/" rel="prev" title="PHP慢日志slow_log">
+                PHP慢日志slow_log <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>

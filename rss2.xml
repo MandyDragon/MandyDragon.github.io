@@ -13,8 +13,8 @@
     
     <item>
       <title>Nginx 504错误总结</title>
-      <link>https://mandydragon.github.io/2017/11/27/Nginx%20504%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/</link>
-      <guid>https://mandydragon.github.io/2017/11/27/Nginx%20504%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/</guid>
+      <link>https://mandydragon.github.io/2017/11/27/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/Nginx%20504%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/</link>
+      <guid>https://mandydragon.github.io/2017/11/27/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/Nginx%20504%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/</guid>
       <pubDate>Mon, 27 Nov 2017 07:02:28 GMT</pubDate>
       <description>
       
@@ -27,7 +27,7 @@
       
       <content:encoded><![CDATA[<p>很多人都都可能遇到过 504 Gateway Time-out。有时候会让人一头雾水。<br>解决方法：<br>1.通过百度可以很多人的说法，调整 nginx配置或者PHP-fpm配置，配置大家都可以百度，在这边就不多说。但是很多都尝试了没有什么软用。<br>2.尝试过上面的方法还是回到本质上是不是整站都是504.如果不是，我建议你打开php-fpm 慢日志来查看对应的页面请求与响应慢是由哪个方法或者操作造成的。<br>php-fpm 慢日志的配置如下：<br>request_slowlog_timeout = 5 //5秒以上的 当一个请求该设置的超时时间后，就会将对应的PHP调用堆栈信息完整写入到慢日志中 设置为 ‘0’ 表示 ‘Off’<br>slowlog = /var/log/php-fpm.slow.log   //日志目录</p><p>再打开日志方法查看是哪个方法或者操作导致的。直接修改代码。<br>php-fpm 慢日志 不建议在生产环境下使用</p><hr><ol><li><a href="https://my.oschina.net/u/3503791/blog/908623" target="_blank" rel="noopener">https://my.oschina.net/u/3503791/blog/908623</a></li></ol>]]></content:encoded>
       
-      <comments>https://mandydragon.github.io/2017/11/27/Nginx%20504%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/#disqus_thread</comments>
+      <comments>https://mandydragon.github.io/2017/11/27/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/Nginx%20504%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/#disqus_thread</comments>
     </item>
     
     <item>
@@ -51,8 +51,8 @@
     
     <item>
       <title>PHP慢日志slow_log</title>
-      <link>https://mandydragon.github.io/2017/11/27/PHP%E6%85%A2%E6%97%A5%E5%BF%97slow-log/</link>
-      <guid>https://mandydragon.github.io/2017/11/27/PHP%E6%85%A2%E6%97%A5%E5%BF%97slow-log/</guid>
+      <link>https://mandydragon.github.io/2017/11/27/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/PHP%E6%85%A2%E6%97%A5%E5%BF%97slow-log/</link>
+      <guid>https://mandydragon.github.io/2017/11/27/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/PHP%E6%85%A2%E6%97%A5%E5%BF%97slow-log/</guid>
       <pubDate>Mon, 27 Nov 2017 03:35:49 GMT</pubDate>
       <description>
       
@@ -65,13 +65,13 @@
       
       <content:encoded><![CDATA[<p>&nbsp;&nbsp;&nbsp; php-fpm慢日志<code>slowl_og</code>设置可以让开发者很好的查找哪些php进程速度过慢而导致的网站问题，让开发者方便的找到问题的所在。该方法同样适用于排查nginx的500、502问题根源，当nginx收到如上错误码时，可以确定后端php-fpm解析php出了某种问题，比如，执行错误，执行超时等。</p><p>php-fpm.conf的配置文件中有一个参数<code>request_slowlog_timeout</code>是这样描述的：</p><blockquote><p>; The timeout for serving a single request after which a PHP backtrace will be dumped to the ‘slowlog’ file. A value of ‘0s’ means ‘off’.<br>; Available units: s(econds)(default), m(inutes), h(ours), or d(ays)<br>; Default Value: 0<br>; request_slowlog_timeout = 0</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 当request_slowlog_timeout设为一个具体秒时,比如request_slowlog_timeout =5，表示如果哪个脚本执行时间大于5秒，会记录这个脚本到慢日志文件中。</span><br><span class="line">2. request_slowlog_timeout =0表示关闭慢日志输出</span><br></pre></td></tr></table></figure><p>慢日志文件位置默认在php的安装目录下的log文件夹中，可以通过修改<code>slowlog = log/$pool.log.slow</code>参数来指定,如下，慢日志会记录下进程号，脚本名称，具体哪个文件哪行代码的哪个函数执行时间过长：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[21-Nov-2013 14:30:38] [pool www] pid 11877</span><br><span class="line">script_filename = /usr/local/nginx/html/www.quancha.cn/www/fyzb.php</span><br><span class="line">[0xb70fb88c] file_get_contents() /usr/local/nginx/html/www.quancha.cn/www/fyzb.php:2</span><br><span class="line">[21-Nov-2013 14:15:23] ERROR: [pool www] &apos;slowlog&apos; must be specified for use with &apos;request_slowlog_timeout&apos;</span><br></pre></td></tr></table></figure><ol><li>request_slowlog_timeout 和 slowlog 需要同时设置</li><li>需要手动创建slowlog文件夹</li></ol><p>开启后，如果有脚本执行超过指定的时间，就会在指定的日志文件中写入类似如下的信息：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[19-Dec-2013 16:54:49] [pool www] pid 18575</span><br><span class="line">script_filename = /home/web/htdocs/sandbox_canglong/test/tt.php</span><br><span class="line">[0x0000000003a00dc8] curl_exec() /home/web/htdocs/sandbox_canglong/test/tt.php:2</span><br><span class="line">[0x0000000003a00cd0] exfilter_curl_get() /home/web/htdocs/sandbox_canglong/test/tt.php:6</span><br></pre></td></tr></table></figure><p>日志说明：</p><ol><li>script_filename 是入口文件</li><li>curl_exec() ： 说明是执行这个方法的时候超过执行时间的。</li><li>exfilter_curl_get() ：说明调用curl_exec()的方法</li><li>exfilter_curl_get() 。</li><li>每行冒号后面的数字是行号</li></ol><p>开启后，在错误日志文件中也有相关记录。如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[19-Dec-2013 15:55:37] WARNING: [pool www] child 18575, script &apos;/home/web/htdocs/sandbox_canglong/test/tt.php&apos; (request: &quot;GET /test/tt.php&quot;) executing too slow (1.006222 sec), logging</span><br><span class="line">[19-Dec-2013 15:55:37] NOTICE: child 18575 stopped for tracing</span><br><span class="line">[19-Dec-2013 15:55:37] NOTICE: about to trace 18575</span><br><span class="line">[19-Dec-2013 15:55:37] NOTICE: finished trace of 18575</span><br></pre></td></tr></table></figure><hr><p>参考博客：</p><ol><li><a href="http://blog.csdn.net/leonpengweicn/article/details/42494813" target="_blank" rel="noopener">http://blog.csdn.net/leonpengweicn/article/details/42494813</a></li><li><a href="http://www.bo56.com/%E5%96%84%E7%94%A8php-fpm%E7%9A%84%E6%85%A2%E6%89%A7%E8%A1%8C%E6%97%A5%E5%BF%97slow-log%EF%BC%8C%E5%88%86%E6%9E%90php%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">http://www.bo56.com/%E5%96%84%E7%94%A8php-fpm%E7%9A%84%E6%85%A2%E6%89%A7%E8%A1%8C%E6%97%A5%E5%BF%97slow-log%EF%BC%8C%E5%88%86%E6%9E%90php%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/</a></li></ol>]]></content:encoded>
       
-      <comments>https://mandydragon.github.io/2017/11/27/PHP%E6%85%A2%E6%97%A5%E5%BF%97slow-log/#disqus_thread</comments>
+      <comments>https://mandydragon.github.io/2017/11/27/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/PHP%E6%85%A2%E6%97%A5%E5%BF%97slow-log/#disqus_thread</comments>
     </item>
     
     <item>
       <title>2018研发校招面经</title>
-      <link>https://mandydragon.github.io/2017/11/22/2018%E7%A0%94%E5%8F%91%E6%A0%A1%E6%8B%9B%E9%9D%A2%E7%BB%8F/</link>
-      <guid>https://mandydragon.github.io/2017/11/22/2018%E7%A0%94%E5%8F%91%E6%A0%A1%E6%8B%9B%E9%9D%A2%E7%BB%8F/</guid>
+      <link>https://mandydragon.github.io/2017/11/22/%E6%9D%82%E8%B0%88/2018%E7%A0%94%E5%8F%91%E6%A0%A1%E6%8B%9B%E9%9D%A2%E7%BB%8F/</link>
+      <guid>https://mandydragon.github.io/2017/11/22/%E6%9D%82%E8%B0%88/2018%E7%A0%94%E5%8F%91%E6%A0%A1%E6%8B%9B%E9%9D%A2%E7%BB%8F/</guid>
       <pubDate>Wed, 22 Nov 2017 03:01:53 GMT</pubDate>
       <description>
       
@@ -88,13 +88,13 @@
       
       <content:encoded><![CDATA[<p>工欲善其事必先利其器</p><table><thead><tr><th><a href="https://www.nowcoder.com/discuss/41696?type=0&amp;order=4&amp;pos=6&amp;page=2" target="_blank" rel="noopener">阿里、腾讯</a></th></tr></thead><tbody><tr><td><a href="https://www.nowcoder.com/discuss/5949?type=0&amp;order=4&amp;pos=129&amp;page=9" target="_blank" rel="noopener">阿里面试题总结</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/54297?type=0&amp;order=4&amp;pos=30&amp;page=3" target="_blank" rel="noopener">百度、京东、蘑菇街、腾讯</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/59683?type=0&amp;order=4&amp;pos=28&amp;page=1" target="_blank" rel="noopener">阿里、华为、滴滴、百度、携程、爱奇艺、美团</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/27285?type=0&amp;order=4&amp;pos=16&amp;page=1" target="_blank" rel="noopener">百度、京东、滴滴、新浪</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/14852?type=0&amp;order=4&amp;pos=15&amp;page=1" target="_blank" rel="noopener">百度、腾讯、网易、360、去哪网</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/41650?type=0&amp;order=4&amp;pos=14&amp;page=1" target="_blank" rel="noopener">百度、头条、滴滴、阿里、搜狐</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/62849?type=0&amp;order=4&amp;pos=17&amp;page=1" target="_blank" rel="noopener">腾讯、滴滴、阿里、网易、小米、京东、美团、百度</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/50455?type=0&amp;order=4&amp;pos=70&amp;page=2" target="_blank" rel="noopener">美团、蚂蚁金服、阿里</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/57771?type=0&amp;order=4&amp;pos=73&amp;page=2" target="_blank" rel="noopener">蚂蚁金服、携程、美团、58</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/57075?type=0&amp;order=4&amp;pos=82&amp;page=2" target="_blank" rel="noopener">美团、腾讯、百度</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/59132?type=0&amp;order=4&amp;pos=29&amp;page=2" target="_blank" rel="noopener">阿里、美团、同花顺</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/50439?type=0&amp;order=4&amp;pos=58&amp;page=1" target="_blank" rel="noopener">阿里、小米、搜狗、美团、百度、腾讯、便利蜂</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/37873?type=0&amp;order=4&amp;pos=91&amp;page=1" target="_blank" rel="noopener">蚂蚁金服、链家</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/37180?type=0&amp;order=4&amp;pos=23&amp;page=1" target="_blank" rel="noopener">阿里</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/26045?type=0&amp;order=4&amp;pos=59&amp;page=2" target="_blank" rel="noopener">腾讯</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/59401?type=0&amp;order=4&amp;pos=95&amp;page=1" target="_blank" rel="noopener">小米</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/61879?type=0&amp;order=4&amp;pos=51&amp;page=1" target="_blank" rel="noopener">华为</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/52168?type=0&amp;order=4&amp;pos=37&amp;page=2" target="_blank" rel="noopener">头条、网易、美团、google、京东</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/60743?type=0&amp;order=4&amp;pos=33&amp;page=2" target="_blank" rel="noopener">腾讯、阿里</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/60078?type=0&amp;order=4&amp;pos=31&amp;page=1" target="_blank" rel="noopener">百度、阿里</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/52268?type=0&amp;order=4&amp;pos=32&amp;page=2" target="_blank" rel="noopener">蚂蚁金服、京东</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/33737?type=0&amp;order=4&amp;pos=18&amp;page=2" target="_blank" rel="noopener">知识点总结</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/60509?type=0&amp;order=4&amp;pos=12&amp;page=3" target="_blank" rel="noopener">知识点总结</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/61958?type=0&amp;order=4&amp;pos=11&amp;page=6" target="_blank" rel="noopener">知识点总结</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/59865?type=0&amp;order=4&amp;pos=13&amp;page=1" target="_blank" rel="noopener">书籍</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/60441?type=0&amp;order=4&amp;pos=36&amp;page=2" target="_blank" rel="noopener">面试书籍</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/21253?type=0&amp;order=4&amp;pos=22&amp;page=1" target="_blank" rel="noopener">高级算法</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/52516?type=0&amp;order=4&amp;pos=25&amp;page=6" target="_blank" rel="noopener">校招心路总结</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/18518?type=0&amp;order=4&amp;pos=85&amp;page=2" target="_blank" rel="noopener">校招历程</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/56158?type=0&amp;order=4&amp;pos=54&amp;page=3" target="_blank" rel="noopener">校招历程</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/51298?type=0&amp;order=4&amp;pos=40&amp;page=2" target="_blank" rel="noopener">校招历程</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/52557?type=0&amp;order=4&amp;pos=26&amp;page=4" target="_blank" rel="noopener">大数据面经，阿里，百度，头条，滴滴，美团，京东，携程</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/48218?type=0&amp;order=4&amp;pos=7&amp;page=1" target="_blank" rel="noopener">链家、58、美团、滴滴、头条、百度、腾讯</a></td></tr><tr><td><a href="https://www.nowcoder.com/discuss/60441?type=0&amp;order=4&amp;pos=36&amp;page=2" target="_blank" rel="noopener">知识点</a></td></tr></tbody></table>]]></content:encoded>
       
-      <comments>https://mandydragon.github.io/2017/11/22/2018%E7%A0%94%E5%8F%91%E6%A0%A1%E6%8B%9B%E9%9D%A2%E7%BB%8F/#disqus_thread</comments>
+      <comments>https://mandydragon.github.io/2017/11/22/%E6%9D%82%E8%B0%88/2018%E7%A0%94%E5%8F%91%E6%A0%A1%E6%8B%9B%E9%9D%A2%E7%BB%8F/#disqus_thread</comments>
     </item>
     
     <item>
       <title>重启远程linux主机</title>
-      <link>https://mandydragon.github.io/2017/11/21/%E9%87%8D%E5%90%AF%E8%BF%9C%E7%A8%8Blinux%E4%B8%BB%E6%9C%BA/</link>
-      <guid>https://mandydragon.github.io/2017/11/21/%E9%87%8D%E5%90%AF%E8%BF%9C%E7%A8%8Blinux%E4%B8%BB%E6%9C%BA/</guid>
+      <link>https://mandydragon.github.io/2017/11/21/linux/%E9%87%8D%E5%90%AF%E8%BF%9C%E7%A8%8Blinux%E4%B8%BB%E6%9C%BA/</link>
+      <guid>https://mandydragon.github.io/2017/11/21/linux/%E9%87%8D%E5%90%AF%E8%BF%9C%E7%A8%8Blinux%E4%B8%BB%E6%9C%BA/</guid>
       <pubDate>Tue, 21 Nov 2017 10:52:20 GMT</pubDate>
       <description>
       
@@ -108,7 +108,7 @@
       
       <content:encoded><![CDATA[<p>在终端上利用ssh，不登录远程主机，直接发送重启命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@192.168.8.128 &apos;reboot&apos;</span><br></pre></td></tr></table></figure>]]></content:encoded>
       
-      <comments>https://mandydragon.github.io/2017/11/21/%E9%87%8D%E5%90%AF%E8%BF%9C%E7%A8%8Blinux%E4%B8%BB%E6%9C%BA/#disqus_thread</comments>
+      <comments>https://mandydragon.github.io/2017/11/21/linux/%E9%87%8D%E5%90%AF%E8%BF%9C%E7%A8%8Blinux%E4%B8%BB%E6%9C%BA/#disqus_thread</comments>
     </item>
     
   </channel>
