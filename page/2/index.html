@@ -252,6 +252,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mandydragon.github.io/2017/11/20/http/HTTP状态码出现499错误/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MandyDragon">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/docker.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="庸人妄语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/20/http/HTTP状态码出现499错误/" itemprop="url">HTTP状态码出现499错误</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T18:46:38+08:00">
+                2017-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Http/" itemprop="url" rel="index">
+                    <span itemprop="name">Http</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://mandydragon.github.io/2017/11/20/杂谈/使用七牛云做hexo图床/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -495,7 +640,7 @@
 <li>检查error_log</li>
 <li>检查access_log</li>
 <li>检查slow_log</li>
-<li>strace查看系统调用</li>
+<li>linux命令工具</li>
 <li>tcpdump分析网络状况</li>
 <li>程序的gdb调试</li>
 </ul>
@@ -503,16 +648,15 @@
 <ul>
 <li>网络超时：connect,write,read timeout</li>
 <li>File not found</li>
-<li><a href="https://mandydragon.github.io/2017/11/20/HTTP%E5%B8%B8%E8%A7%81%E7%8A%B6%E6%80%81%E7%A0%81/">HTTP状态码</a></li>
+<li><a href="https://mandydragon.github.io/2017/11/20/http/HTTP%E5%B8%B8%E8%A7%81%E7%8A%B6%E6%80%81%E7%A0%81/">HTTP状态码</a></li>
 </ul>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 举例来讲，更新nginx后，http请求不能返回完整数据，返回部分数据后请求就结束了，每次都能复现。这时候查看error_log,看到有Permission denied错误，即查实为nginx的临时写目录没有权限所造成。</p>
 <h1 id="slow-log"><a href="#slow-log" class="headerlink" title="slow_log"></a><a href="https://mandydragon.github.io/2017/11/27/PHP%E6%85%A2%E6%97%A5%E5%BF%97slow-log/">slow_log</a></h1><p>&nbsp;&nbsp;&nbsp;&nbsp;php-fpm慢日志slowl_og设置可以让开发者很好的查找哪些php进程速度过慢而导致的网站问题，让开发者方便的找到问题的所在。该方法同样适用于排查nginx的500、502问题根源，当nginx收到如上错误码时，可以确定后端php-fpm解析php出了某种问题，比如，执行错误，执行超时等。</p>
 <h1 id="access-log"><a href="#access-log" class="headerlink" title="access_log"></a><a href="https://mandydragon.github.io/2017/11/27/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/PHP%E6%85%A2%E6%97%A5%E5%BF%97slow-log/">access_log</a></h1><p>对access_log进行统计分析，可以很好地展示与监控web服务的状态。包括200请求次数的变化，流量大小，后端响应时间等</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 统计HTTP状态码的比例，可以知道nginx服务健康状况；</span><br><span class="line">2. 统计响应时间，判断超时请求。</span><br><span class="line">3. 统计QPS，对比负载是否均衡。</span><br></pre></td></tr></table></figure>
-<h1 id="strace"><a href="#strace" class="headerlink" title="strace"></a>strace</h1><p>使用strace命令工具可跟踪系统调用并打印出丰富的信息，如系统调用发生的时间，调用耗时，传送的参数，调用返回结果等等。<br>常用参数有：<br>-tt 打印系统调用发生的时间<br>-T 打印系统调用耗时<br>-e <name> 跟踪特定系统调用，比如-e open,read,write,close来追踪文件相关调用<br>-s <size> 指定打印的最大长度</size></name></p>
-<p>strace举例:某个PHP进程hang住，其pid为26879，那么可以使用strace -p 26879来观察。<br>示例显示，futex表示很可能发生死锁，strace打印出其参数值。</p>
-<p>某次排查PHP问题时，发现有时PHP处理请求过慢，就可用strace来追查验证系统调用耗时。结果strace -T就发现是flock调用过慢</p>
-<p>而另外一次，朋友线上出了故障，系统负载特别高，load到200多，CPU使用率也到90%的，特别高，关键是使用strace追查并没有发现什么问题。这里要说明一下，strace只能追踪系统调用，普通函数是无法追踪的。CPU很高，说明程序一直在跑，但strace没有异常，说明是用户状代码在消耗CPU。问题必定出现在自己程序逻辑上。<br>最终证实是系统上线更换配置文件，导致程序逻辑出错。</p>
+<h1 id="linux工具命令"><a href="#linux工具命令" class="headerlink" title="linux工具命令"></a><a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/index.html" target="_blank" rel="noopener">linux工具命令</a></h1><h2 id="strace-跟踪进程中的系统调用"><a href="#strace-跟踪进程中的系统调用" class="headerlink" title="strace 跟踪进程中的系统调用"></a><a href="http://ibash.cc/frontend/article/36/" target="_blank" rel="noopener">strace 跟踪进程中的系统调用</a></h2><p>使用strace命令工具可跟踪系统调用并打印出丰富的信息，如系统调用发生的时间，调用耗时，传送的参数，调用返回结果等等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">常用参数有：</span><br><span class="line">-tt 打印系统调用发生的时间</span><br><span class="line">-T 打印系统调用耗时</span><br><span class="line">-e &lt;name&gt; 跟踪特定系统调用，比如-e open,read,write,close来追踪文件相关调用</span><br><span class="line">-s &lt;size&gt; 指定打印的最大长度</span><br></pre></td></tr></table></figure>
+<p>strace只能追踪系统调用，普通函数是无法追踪的。CPU很高，说明程序一直在跑，但strace没有异常，说明是用户状代码在消耗CPU。问题必定出现在自己程序逻辑上。</p>
 <h1 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h1><p>tcpdump是linux本身得供的一款强大的网络抓包工具。对于两台设备之间传输的数据是否正常，为何响应慢等网络问题，都可以使用tcpdump来抓包排查。<br>windows下面有一款具有同样功能的工具软件–wireshark,也很好用。</p>
 <p>还记得刚才示例中提到的慢连接吧，Nginx的access_log显示请求响应时间为3s多，而后端是毫秒计，这种慢就可以使用tcpdump来抓包查看了</p>
 <p>可以看到后端响应ack花了3s.这种慢连接，我们线上会经常碰到。通常nginx做反向代量连接后端时、php程序在访问后端资源时、以及php用curl请求其他接口时，经常出现慢连接的情况。这些慢连接产生的根本原因在于：<br>–服务端listen时，设置的backlog太小，导致连接队列很小；<br>–连接队列满时，对于新的连接请求，服务端会直接丢弃SYN包；<br>–SYN包初始重传时间为3s；</p>
@@ -1290,7 +1434,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1301,7 +1445,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1312,7 +1456,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

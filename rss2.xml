@@ -8,8 +8,30 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Mon, 27 Nov 2017 09:47:25 GMT</pubDate>
+    <pubDate>Tue, 28 Nov 2017 03:44:01 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>git拉取远程分支到本地</title>
+      <link>https://mandydragon.github.io/2017/11/28/%E6%9D%82%E8%B0%88/git%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%88%B0%E6%9C%AC%E5%9C%B0/</link>
+      <guid>https://mandydragon.github.io/2017/11/28/%E6%9D%82%E8%B0%88/git%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%88%B0%E6%9C%AC%E5%9C%B0/</guid>
+      <pubDate>Tue, 28 Nov 2017 03:29:52 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;新建本地分支&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td 
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<ul><li>新建本地分支</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b localName</span><br></pre></td></tr></table></figure><p>pull远程代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin remoteName</span><br></pre></td></tr></table></figure><ul><li>fetch</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin branchname:branchname</span><br></pre></td></tr></table></figure><ul><li>获取远程分支remoteName 到本地新分支localName，并跳到localName分支</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout origin/remoteName -b localName</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      <comments>https://mandydragon.github.io/2017/11/28/%E6%9D%82%E8%B0%88/git%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%88%B0%E6%9C%AC%E5%9C%B0/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>nginx 403 Forbidden</title>
@@ -89,25 +111,6 @@
       <content:encoded><![CDATA[<p>很多人都都可能遇到过 504 Gateway Time-out。有时候会让人一头雾水。<br>解决方法：<br>1.通过百度可以很多人的说法，调整 nginx配置或者PHP-fpm配置，配置大家都可以百度，在这边就不多说。但是很多都尝试了没有什么软用。<br>2.尝试过上面的方法还是回到本质上是不是整站都是504.如果不是，我建议你打开php-fpm 慢日志来查看对应的页面请求与响应慢是由哪个方法或者操作造成的。<br>php-fpm 慢日志的配置如下：<br>request_slowlog_timeout = 5 //5秒以上的 当一个请求该设置的超时时间后，就会将对应的PHP调用堆栈信息完整写入到慢日志中 设置为 ‘0’ 表示 ‘Off’<br>slowlog = /var/log/php-fpm.slow.log   //日志目录</p><p>再打开日志方法查看是哪个方法或者操作导致的。直接修改代码。<br>php-fpm 慢日志 不建议在生产环境下使用</p><hr><ol><li><a href="https://my.oschina.net/u/3503791/blog/908623" target="_blank" rel="noopener">https://my.oschina.net/u/3503791/blog/908623</a></li></ol>]]></content:encoded>
       
       <comments>https://mandydragon.github.io/2017/11/27/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/Nginx%20504%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Nginx 500错误总结</title>
-      <link>https://mandydragon.github.io/2017/11/27/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/Nginx%20500%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/</link>
-      <guid>https://mandydragon.github.io/2017/11/27/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/Nginx%20500%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/</guid>
-      <pubDate>Mon, 27 Nov 2017 07:00:01 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;500（服务器内部错误）    服务器遇到错误，无法完成请求。&lt;br&gt;501（尚未实施）    服务器不具备完成请求的功能。例如，当服务器无法识别请求方法时，服务器可能会返回此代码。&lt;br&gt;502（错误网关）    服务器作为网关或代理，从上游服务器收到了无效的响应。&lt;br
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>500（服务器内部错误）    服务器遇到错误，无法完成请求。<br>501（尚未实施）    服务器不具备完成请求的功能。例如，当服务器无法识别请求方法时，服务器可能会返回此代码。<br>502（错误网关）    服务器作为网关或代理，从上游服务器收到了无效的响应。<br>503（服务不可用）    目前无法使用服务器（由于超载或进行停机维护）。通常，这只是一种暂时的状态。<br>504（网关超时）    服务器作为网关或代理，未及时从上游服务器接收请求。<br>505（HTTP 版本不受支持）    服务器不支持请求中所使用的 HTTP 协议版本。</p><p>Nginx 500错误（Internal Server Error  内部服务器错误）：500错误指的是服务器内部错误，也就是服务器遇到意外情况，而无法履行请求。</p><p>500错误一般有几种情况：</p><ol><li><p>web脚本错误，如php语法错误，lua语法错误等。</p></li><li><p>访问量大的时候，由于系统资源限制，而不能打开过多的文件</p></li></ol><p>一般分析思路：</p><p>（1）查看nginx error log ，查看php error log</p><p>（2）如果是too many open files，修改nginx的worker_rlimit_nofile参数，使用ulimit查看系统打开文件限制，修改/etc/security/limits.conf</p><p>（3）如果是脚本的问题，则需要修复脚本错误，并优化代码</p><p>（4）各种优化都做好，还是出现too many open files，那就要考虑做负载均衡，把流量分散到不同服务器上去了。</p><p>错误原因总结：</p><p>1、硬盘空间满了 </p><p>使用 df -k 查看硬盘空间是否满了。清理硬盘空间就可以解决500错误。nginx如果开启了access log，在不需要的情况下，最好关闭access log。access log会占用大量硬盘空间。 </p><p>2、nginx配置文件错误 </p><p>这里不是指语法错误，nginx如果配置文件有语法错误，启动的时候就会提示。当配置rewrite的时候，有些规则处理不当会出现500错误，请仔细检查自己的rewrite规则。如果配置文件里有些变量设置不当，也会出现500错误，比如引用了一个没有值的变量。 </p><p>3、如果上面的问题都不存在可能是模拟的并发数太多了，需要调整一下nginx.conf的并发设置数 </p><p>解决方法是： </p><p>1 打开/etc/security/limits.conf文件，加上两句</p><p>复制代码代码如下:</p><ul><li>soft nofile 65535 </li><li>hard nofile 65535 </li></ul><p>2 打开/etc/nginx/nginx.conf<br>在worker_processes的下面增加一行 </p><p>复制代码代码如下:<br>worker_rlimit_nofile 65535;</p><p>3 重新启动nginx，重新载入设置 </p><p>复制代码代码如下:<br>kill -9 <code>ps -ef | grep php | grep -v grep | awk &#39;{print $2}&#39;</code><br>/usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -C 100 -u www-data -f /usr/bin/php-cgi<br>killall -HUP nginx<br>重启后再看nginx的错误日志，也没有发现500报错的情况了。 </p><p>4、有可能是数据库问题我的在nginx日志php日志都没有发现什么问题, 最后发现数据库访问不了,修正后问题解决。</p><hr><p>参考：</p><ol><li><a href="http://www.cnblogs.com/huqiang/p/5333975.html" target="_blank" rel="noopener">http://www.cnblogs.com/huqiang/p/5333975.html</a></li><li></li></ol>]]></content:encoded>
-      
-      <comments>https://mandydragon.github.io/2017/11/27/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/Nginx%20500%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/#disqus_thread</comments>
     </item>
     
   </channel>
